@@ -1,4 +1,5 @@
 const usersHTML = document.querySelector(".users");
+const pizzaHTML = document.querySelector(".pizzas")
 
 const usersArray = [
     {
@@ -101,4 +102,24 @@ let pizzaArray = [
     },
 ]
 
-console.log(pizzaArray);
+
+
+function pizzaUsers(users) {
+    return users.map((pizza) => {
+        const checkEvenUsers = pizza.id % 2 === 0 ? "even" : "odd";
+        return `
+            <li class="pizza">
+            <img src="${pizza.image}" alt="pizza image"/>
+            <h2 class="title">${pizza.title}</h2
+            <p class="ing">${pizza.ing}</p>
+            <div class="pizza bottom">
+              <span class="price">от ${pizza.price}сом</span>
+              <bottom class="bottom">Выбрать</bottom
+             </div
+            </li>
+        `
+    })
+}
+
+let redorPizzaHTML =redorPizza(pizzaArray);
+pizzaHTML.innerHTML =redorPizzaHTML.join("")
